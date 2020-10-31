@@ -1,17 +1,17 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Sistema de monitoreo en tiempo real para el adulto mayor} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-\posgrado{Carrera de Especialización en Internet de las Cosas} 
+\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+%\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{William's Ernesto Limonchi Sandoval} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Nombre del Director}
@@ -32,8 +32,8 @@
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{25 de agosto de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlanificacion{13 de octubre de 2020} 	%Fecha de final de cursada de GdP
+\fechaINICIO{13 de octubre de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlanificacion{11 de diciembre de 2020} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{22 de agosto de 2021}		%Fecha de defensa pública del trabajo final
 
 
@@ -62,12 +62,12 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-1.0      & Creación del documento                                          & 27/06/2020 \\ \hline
-1.1      & Avances en alguna cosa                                          & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                     & dd/mm/aaaa \\ \hline
+1.0      & Creación del documento                                          & 23/10/2020 \\ \hline
+1.1      & Presentación hasta el punto 6                                   & 07/11/2020 \\ \hline
+%1.2      & Otro ejemplo \newline
+%		   Con texto partido \newline
+%		   En varias líneas \newline
+%		   A propósito                                                     & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un sistema de control de temperatura de un calefón, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el monitoreo en tiempo real de un adulto mayor, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,22 +107,14 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+\begin{consigna}{black}
+El 30 de enero de 2020, la OMS declaró la epidemia de COVID-19, esta enfermedad respiratoria provoca mayor mortalidad en personas mayores de 60 años. Una medida que han adoptado todos los países ha sido el distanciamiento social generando que las familias estén lejos de sus familiares más adultos, además de desconocer el estado de salud de sus seres queridos. 
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+El objetivo del sistema a desarrollar es conocer el nivel de temperatura, el nivel de saturación de oxígeno en la sangre y si adulto mayor ha sufrido alguna caída. El microcontrolador obtiene toda esta data mediante los diferentes sensores para luego procesar y almacenar la información en un memoria micro SD. Asimismo, esta información es transmitida mediante un módulo Wifi hacia una plataforma Web en la que el usuarios o los usuarios puedan observar la data obtenida. 
 
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
+El presente proyecto se destaca especialmente por incorporar un sistema en tiempo real por lo que se monitorea y notifica, de presentarse alguna eventualidad, de la manera más rápida y optima. 
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la Figura 1 se muestra el diagrama de bloques del sistema. Se observa el microcontrolador con cada uno de los sensores del sistema, así como  el módulo de alimentación el cual será una batería y por último, el Wifi el cual transmite la información hacía la página web.
 
 \vspace{25px}
 
@@ -135,7 +127,6 @@ La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en
 
 \vspace{25px}
 
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
 \end{consigna}
 
 

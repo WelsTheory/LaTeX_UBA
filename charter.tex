@@ -14,7 +14,7 @@
 \autor{William's Ernesto Limonchi Sandoval} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
+\director{Lucas Dórdolo}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{} % si queda vacio no se deberíá incluir 
@@ -22,7 +22,7 @@
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Javier Vasquez de Velasco}
-\empresaCliente{Ing. Mecánico}
+\empresaCliente{Especialista Ferreyros}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -64,6 +64,7 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 23/10/2020 \\ \hline
 1.1      & Presentación hasta el punto 6                                   & 06/11/2020 \\ \hline
+1.2      & Correcciones de Practico 1                                      & 06/11/2020 \\ \hline
 %1.2      & Otro ejemplo \newline
 %		   Con texto partido \newline
 %		   En varias líneas \newline
@@ -84,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el monitoreo en tiempo real de un adulto mayor, y tendrá un presupuesto preliminar estimado de 611 hs de trabajo con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en observar la temperatura, nivel de saturación de oxígeno y detectar caída del adulto mayor en tiempo real, y tendrá un presupuesto preliminar estimado de 611 hs de trabajo con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -108,19 +109,19 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 \begin{consigna}{black}
-El 30 de enero de 2020, la OMS declaró la epidemia de COVID-19, esta enfermedad respiratoria provoca mayor mortalidad en personas mayores de 60 años. Una medida que han adoptado todos los países ha sido el distanciamiento social generando que las familias estén lejos de sus familiares más adultos, además de desconocer el estado de salud de sus seres queridos. 
+El 30 de enero de 2020, la OMS declaró la epidemia de COVID-19, esta enfermedad respiratoria provoca mayor mortalidad en personas mayores de 60 años. Una medida que han adoptado todos los países ha sido el distanciamiento social lo que genera que las familias estén lejos de sus familiares más adultos, además de desconocer el estado de salud de sus seres queridos. 
 
 El objetivo del sistema a desarrollar es conocer el nivel de temperatura, el nivel de saturación de oxígeno en la sangre y si adulto mayor ha sufrido alguna caída. El microcontrolador obtiene toda esta data mediante los diferentes sensores para luego procesar y almacenar la información en un memoria micro SD. Asimismo, esta información es transmitida mediante un módulo Wifi hacia una plataforma Web en la que el usuarios o los usuarios puedan observar la data obtenida. 
 
-El presente proyecto se destaca especialmente por incorporar un sistema en tiempo real por lo que se monitorea y notifica, de presentarse alguna eventualidad, de la manera más rápida y optima. 
+El presente proyecto se destaca especialmente por incorporar un sistema en tiempo real por lo que se monitorea y notifica, de presentarse alguna eventualidad, de la manera más rápida y óptima. 
 
-En la Figura 1 se muestra el diagrama de bloques del sistema. Se observa el microcontrolador con cada uno de los sensores del sistema, así como  el módulo de alimentación el cual será una batería y por último, el Wifi el cual transmite la información hacía la página web.
+En la Figura 1 se muestra el diagrama de bloques del sistema. Se observa el microcontrolador con cada uno de los sensores del sistema, así como  el módulo de alimentación que será una batería y por último, el Wifi que transmite la información hacía la página web.
 
 \vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=1\textwidth]{./Figuras/diagBloques.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
@@ -153,8 +154,8 @@ Impulsor      & -                 & -              	& -       	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores & -                 & -             	& -       	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          & -            	& -       	\\ \hline
+Equipo        & - \newline 
+				-          & -            	& -       	\\ \hline
 Opositores    & Wok Solución      & -            	& -      	\\ \hline
 Usuario final & Adultos mayores   & -              	& -      	\\ \hline
 \end{tabularx}
@@ -169,7 +170,7 @@ Usuario final & Adultos mayores   & -              	& -      	\\ \hline
 \label{sec:proposito}
 
 \begin{consigna}{black}
-El propósito de este proyecto es de desarrollar un prototipo de monitoreo en tiempo real de un adulto mayor. Este desarrollo permite visualizar el estado de temperatura, saturación de oxígeno y si el adulto mayor ha sufrido alguna caída. Además de notificar por si ocurre alguna eventualidad a los familiares. 
+El propósito de este proyecto es desarrollar un prototipo de monitoreo en tiempo real de un adulto mayor. Este desarrollo permite visualizar el estado de temperatura, saturación de oxígeno y si el adulto mayor ha sufrido alguna caída. Además de notificar por si ocurre alguna eventualidad a los familiares. 
 
 \end{consigna}
 
@@ -177,7 +178,7 @@ El propósito de este proyecto es de desarrollar un prototipo de monitoreo en ti
 \label{sec:alcance}
 
 \begin{consigna}{black}
-Para la realización de este trabajo se realizará el diseño e implementación del hardware junto al desarrollo del firmware del prototipo del proyecto el cual correrá en un sistema de tiempo real. 
+Para la realización de este trabajo se llevará a cabo el diseño e implementación del hardware junto al desarrollo del firmware del prototipo del proyecto el cual correrá en un sistema de tiempo real. 
 
 El presente proyecto incluye la adquisición de datos de los sensores de temperatura, saturación de oxígeno y acelerómetro. También incluye el procesamiento de información, almacenamiento de la data en tarjeta micro SD y transmisión de datos mediante WiFi hacia una plataforma Web. Además, se desarrollará una plataforma Web en la cual se visualizarán los datos obtenidos del sistema y notificará a los usuarios de producirse algún evento de caída.   
 
@@ -196,7 +197,7 @@ Para el desarrollo del presente proyecto se supone que:
 \item Se contará con una CIAA, STM32 u otra placa similar a definir. 
 \item Se contará con 2 juegos de sensores y actuadores.
 \item Se contará con los componentes electrónicos necesarios para la implementación del prototipo.
-\item Se dispondrá de las 600hs requeridass para realizar el proyecto. 
+\item Se dispondrá de las 600hs requeridas para realizar el proyecto. 
 \end{itemize}
 
 \end{consigna}
@@ -209,7 +210,11 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{enumerate}
 \item Requerimientos del sistema
 	\begin{enumerate}
-	\item El proyecto debe ser un sistema de tiempo real.
+	\item El proyecto debe utilizar un sistema operativo en tiempo real.
+	\item El sistema debe enviar la información cada 1 segundo.
+	\item El sistema debe tomar 1000 muestras del sensor de saturación de oxígeno en un periodo de 1 segundo.
+	\item El sistema debe tomar 200 muestras del sensor de temperatura en cada 1 segundo. 
+	\item El sistema debe incorporar un algoritmo de detección de caídas.
 	\item El sistema debe transmitir la información mediante un módulo WiFi hacia una plataforma Web, utilizando el protocolo MQTT.
 	\item El sistema debe operar con batería que dure al menos 12 horas.
 	\item El sistema debe tener la capacidad de almacenamiento de datos recolectados por al menos un mes. 
@@ -218,24 +223,38 @@ Para el desarrollo del presente proyecto se supone que:
 	\end{enumerate}
 \item Requerimiento de la plataforma Web
 	\begin{enumerate}
-	\item La plataforma Web debe ser de fácil uso y entendimiento para el usuario.
-	\item La plataforma Web debe mostrar la información, estados y valores de los sensores en tiempo real.
-	\item La plataforma Web debe notificar al usuarios o usuarios que utilicen el sistema de presentarse un evento de caída.
+	\item La plataforma Web debe mostrar la información, estados y valores de los sensores en un tiempo entre 100 y 200ms.
+	\item La plataforma Web debe notificar valores medidos fuera de rango o si se presenta un evento de caída.
 	\item La plataforma Web debe permitir la modificación de parámetros de configuración o de la información del usuario.
 	\end{enumerate}
-\item Requerimiento de proyecto
+\item Requerimiento de Testing 
+	\begin{enumerate}
+	\item Test unitario de cada función de software.
+	\item Test de detección de caídas.
+	\item Test de duración de batería.
+	\item Test de almacenamiento de información.
+	\end{enumerate}
+\item Requerimiento de documentación
 	\begin{enumerate}
 	\item El desarrollo estará acompañado por una memoria técnica.
 	\item El desarrollo estará acompañado de guía de usuario.
 	\end{enumerate}
+
 \end{enumerate}
 \end{consigna}
 
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+\begin{consigna}{black}
+\vspace{-35px}
+\begin{itemize}
+\item Yo como adulto mayor, quiero poder seleccionar fechas para visualizar el estado de salud por día y hora. (\textit{Story Points: 7})
+\item Yo como familiar del adulto mayor, quiero poder descargar la información para llevarlo a algún centro de salud. (\textit{Story Points: 9}) 
+\item Yo como familiar del adulto mayor, quiero que me notifiquen cada cierto tiempo para conocer el estado de salud de mi familiar. (\textit{Story Points: 9}) 
+\item Yo como adulto mayor, quiero una alerta para conocer si el dispositivo no está conectado a internet.(\textit{Story Points: 9})  
+\item Yo como adulto mayor, quiero que me notifiquen cuando la batería esté en 15\% para recargar la batería.(\textit{Story Points: 6}) 
+\end{itemize}
 \end{consigna}
 
 \section{5. Entregables principales del proyecto}
@@ -268,28 +287,28 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 	\end{enumerate}
 \item Diseño general del proyecto (35 hs)
 	\begin{enumerate}
-	\item Realización de diagrama de bloques. (8 hs)
+	\item Realización de diagrama de bloques. (4 hs)
+	\item Realización de diseño de la arquitectura del sistema. (4 hs)
 	\item Obtener los componentes para el prototipo de pruebas. (12 hs)
 	\item Diagrama de flujo del programa. (15 hs)	
-\item Diseño de Hardware (64 hs)
-	\item Requerimientos específicos. (3 hs)
+	\end{enumerate}
+\item Diseño de Hardware (61 hs)
+	\begin{enumerate}
 	\item Elaborar el diagrama esquemático del prototipo. (20 hs)
 	\item Realizar pruebas del circuito del prototipo. (15 hs)
 	\item Elaborar el PCB del prototipo de pruebas. (20 hs)
 	\item Montar el prototipo de pruebas. (3 hs)
 	\item Verificar conexiones de la PCB. (3 hs)
 	\end{enumerate}
-\item Diseño de Firmware (173 hs)
+\item Diseño de Firmware (165 hs)
 	\begin{enumerate}
-	\item Requerimientos específicos. (3 hs)
 	\item Desarrollo del sistema de lectura de los sensores de temperatura y saturación.(25 hs)
 	\item Desarrollo del sistema de lecturas del acelerómetro. (25 hs)
 	\item Desarrollo del sistema de almacenamiento de datos. (20 hs)
 	\item Desarrollo del sistema de transmisión de datos. (20 hs)
 	\item Desarrollo del sistema de monitoreo de tensión de la batería. (15 hs)
-	\item Desarrollo del sistema en tiempo real. (35 hs)
-	\item Desarrollo del firmware integral. (20 hs)
-	\item Realizar pruebas de los sistemas en conjunto. (10 hs)
+	\item Desarrollo del sistema en RTOS. (40 hs)
+	\item Realizar pruebas de los sistemas en conjunto. (20 hs)
 	\end{enumerate}
 \item Desarrollo de la aplicación Web (65 hs)
 	\begin{enumerate}
@@ -303,14 +322,16 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 	\item Montar el proyecto. (6 hs)
 	\item Verificar conexiones de la PCB. (4 hs)
 	\end{enumerate}
-\item Testing y depuración (118 hs)
+\item Testing y depuración (193 hs)
 	\begin{enumerate}
 	\item Registrar las pruebas realizadas. (3 hs)
-	\item Realizar pruebas de los sistemas. (25 hs)
-	\item Realizar pruebas de comunicación. (25 hs)
-	\item Realizar pruebas de la aplicación web.  (25 hs)
-	\item Testear el sistema en conjunto. (20 hs)
-	\item Analizar las experiencias de los usuarios finales. (20 hs)
+	\item Realizar pruebas de los sistemas. (30 hs)
+	\item Realizar pruebas de comunicación. (30 hs)
+	\item Realizar pruebas de detección de caídas. (30hs)
+	\item Realizar pruebas de duración de batería. (20hs)
+	\item Realizar pruebas de almacenamiento de información. (20hs)
+	\item Realizar pruebas de la aplicación web.  (30 hs)
+	\item Testear el sistema en conjunto. (30 hs)
 	\end{enumerate}
 \item Documentación (24 hs)
 	\begin{enumerate}
@@ -324,7 +345,7 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (611 hs)
+Cantidad total de horas: (675 hs)
 
 \end{consigna}
 

@@ -213,7 +213,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item El proyecto debe utilizar un sistema operativo en tiempo real.
 	\item El sistema debe enviar la información cada 1 segundo.
 	\item El sistema debe tomar 1000 muestras del sensor de saturación de oxígeno en un periodo de 1 segundo.
-	\item El sistema debe tomar 200 muestras del sensor de temperatura en cada 1 segundo. 
+	\item El sistema debe tomar 2 muestras del sensor de temperatura en cada 1 segundo. 
 	\item El sistema debe incorporar un algoritmo de detección de caídas.
 	\item El sistema debe transmitir la información mediante un módulo WiFi hacia una plataforma Web, utilizando el protocolo MQTT.
 	\item El sistema debe operar con batería que dure al menos 12 horas.
@@ -225,7 +225,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\begin{enumerate}
 	\item La plataforma Web debe mostrar la información, estados y valores de los sensores en un tiempo entre 100 y 200ms.
 	\item La plataforma Web debe notificar valores medidos fuera de rango o si se presenta un evento de caída.
-	\item La plataforma Web debe permitir la modificación de parámetros de configuración o de la información del usuario.
+	\item La plataforma Web debe permitir la modificación de parámetros de la información del usuario.
 	\end{enumerate}
 \item Requerimiento de Testing 
 	\begin{enumerate}
@@ -669,29 +669,90 @@ Riesgo 6: No se realiza la comunicación inalámbrica entre el sistema y la apli
 
 \section{13. Gestión de la calidad}
 \label{sec:calidad}
-
+\vspace{-30px}
 \begin{consigna}{black}
 \begin{itemize} 
 \item Requerimiento 1.1: El proyecto debe utilizar un sistema operativo en tiempo real.
 \begin{itemize}
-\item Verificación: Durante el desarrollo del proyecto se utilizará un sistema RTOS, además que se incluirán con los otros sistemas. 
-Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+\item Verificación: Verificar que en el diseño de arquitectura se plantea el uso de un sistema operativo de tiempo real.
+\item Validación: Validar que el sistema informa los cambios en el tiempo especificado.
 \end{itemize}
-
-
-
+\item Requerimiento 1.2: El sistema debe enviar la información cada 1 segundo.
+\begin{itemize}
+\item Validación: Se enviará un dato de prueba cada segundo, y se verificará que se obtiene los datos luego de un tiempo determinado.
 \end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.
+\item Requerimiento 1.3: El sistema debe tomar 1000 muestras del sensor de saturación de oxígeno en un periodo de 1 segundo.
+\begin{itemize}
+\item Verificación: Verificar en la hoja de datos el cumplimiento de las tasas de muestreo del sensor y del microprocesador.
+\item Validación: Se hará una simulación en la que se enviarán 1000 muestras cada segundo, luego de un tiempo determinado se verificarán los datos. 
+\end{itemize}
+\item Requerimiento 1.4: El sistema debe tomar 2 muestras del sensor de temperatura en cada 1 segundo. 
+\begin{itemize}
+\item Verificación: Verificar en la hoja de datos el cumplimiento de las tasas de muestreo del microprocesador para la conversión análogo-digital. Se simulará el comportamiento con respecto de frecuencia.
+\item Validación: Se excitará el módulo con una señal sinusoidal de 1KHz, y se verificará que con un muestreo datos de forma alternada una muestra positiva y negativa.
+\end{itemize}
+\item Requerimiento 1.5: El sistema debe incorporar un algoritmo de detección de caídas.
+\begin{itemize}
+\item Verificación: Se corroborará en la hoja de datos que el componente sea el adecuado. Se buscará teoría acerca de los cálculos de ejes para la detección de caída.
+\item Validación: Se harán simulaciones en diferentes escenarios para comprobar si se detecta la caída.
+\end{itemize}
+\item Requerimiento 1.6: El sistema debe transmitir la información mediante un módulo WiFi hacia una plataforma Web, utilizando el protocolo MQTT.
+\begin{itemize}
+\item Verificación: Se diseñará un plan detallado para el desarrollo de aplicación, simulaciones de conexión y envío de datos.
+\item Validación: Se realizarán pruebas para verificar la recepción y visualización de los datos en la aplicación. 
+\end{itemize}
+\item Requerimiento 1.7: El sistema debe operar con batería que dure al menos 12 horas.
+\begin{itemize}
+\item Verificación: Determinar cuanto consume el sistema y realizar los cálculos para determinar que batería cumple los requisitos.
+\item Validación: Se hará una prueba con el dispositivo encendido y observará en cuanto tiempo se apaga.  
+\end{itemize}
+\item Requerimiento 1.8: El sistema debe tener la capacidad de almacenamiento de datos recolectados por al menos un mes. 
+\begin{itemize}
+\item Verificación: Determinar cuanta capacidad de memoria ocupa cada muestra realizada y realizar los cálculos necesarios.
+\item Validación: Generar muchos datos para almacenarlos en un periodo de un mes y verificar cuanto de almacenamiento alcanzó.   
+\end{itemize}
+\item Requerimiento 1.9: El sistema debe tener como prioridad la detección de caídas, además de enviar esta información en un tiempo menor a 100 ms.
+\begin{itemize}
+\item Verificación: Determinar en el sistema el evento de mayor prioridad.
+\item Validación: Se harán simulaciones de caídas para verificar si el sistema envía estos datos.
+\end{itemize}
+\item Requerimiento 1.10: El sistema debe utilizar GIT para el control de versiones.
+\begin{itemize}
+\item Verificación: Se decidirá que antes de comenzar el proyecto o cualquier tarea se iniciará el programa de versionado.
+\item Validación: Se revisará que se realicen las versiones periódicamente.  
+\end{itemize}
+\item Requerimiento 2.1: La plataforma Web debe mostrar la información, estados y valores de los sensores en un tiempo entre 100 y 200ms.
+\begin{itemize}
+\item Verificación: Se revisará que la plataforma Web pueda realizar dashboard.
+\item Validación: Se simulará eventos para verificar que se visualicen en el dashboard de la aplicación.
+\end{itemize}
+\item Requerimiento 2.2: La plataforma Web debe notificar valores medidos fuera de rango o si se presenta un evento de caída.
+\begin{itemize}
+\item Verificación: Se revisará que la plataforma Web pueda enviar notificaciones.
+\item Validación: Se simulará un evento de caída para ver si la plataforma notifica. 
+\end{itemize}
+\item Requerimiento 2.3: La plataforma Web debe permitir la modificación de parámetros de la información del usuario.
+\begin{itemize}
+\item Verificación: Se verificará que la aplicación pueda ser modificada por los usuarios.
+\item Validación: Se simula un evento y se cambian algunos parámetros de información en la aplicación Web.
+\end{itemize}
+\item Requerimiento 4.1: El desarrollo estará acompañado por una memoria técnica.
+\begin{itemize}
+\item Verificación: Se destinará tiempo para la elaboración de la memoria técnica.
+\item Validación: Se calificarán todos los entregables con plantillas y valoraciones de funcionalidad.
+\end{itemize}
+\item Requerimiento 4.2: El desarrollo estará acompañado de guía de usuario.
+\begin{itemize}
+\item Verificación: Se destinará tiempo para la elaboración de la guía de usuario.
+\item Validación: Se calificarán todos los entregables con plantillas y valoraciones de funcionalidad.
+\end{itemize}
+\end{itemize}
 
 \end{consigna}
-
+\vspace{-10px}
 \section{14. Comunicación del proyecto}
 \label{sec:comunicaciones}
-
 El plan de comunicación del proyecto es el siguiente:
-
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|C{2cm}|C{2cm}|C{2.2cm}|C{2cm}|C{2.1cm}|@{}}
@@ -737,7 +798,7 @@ Se utilizará un servicio de fabricación de la tarjeta electrónica por lo que 
 \end{itemize}
 
 \end{consigna}
-
+\vspace{-15px}
 \section{16. Seguimiento y control}
 \label{sec:seguimiento}
 
